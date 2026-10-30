@@ -1,10 +1,303 @@
-<!doctype html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>StudentHub | Management Dashboard</title>
+
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <a href="#" class="brand">
+        <span class="brand-icon">S</span>
+        <span>Student<span class="brand-light">Hub</span></span>
+      </a>
+
+      <div class="sidebar-label">MENU</div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-link active">
+          <span>▦</span> Overview
+        </a>
+
+        <a href="#registration" class="nav-link">
+          <span>＋</span> Add Student
+        </a>
+
+        <a href="#students" class="nav-link">
+          <span>♙</span> Students
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-avatar">SH</div>
+        <div>
+          <strong>Administrator</strong>
+          <small>Management Panel</small>
+        </div>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="overview">
+
+      <!-- HEADER -->
+      <header class="topbar">
+
+        <div>
+          <p class="topbar-greeting">WELCOME BACK 👋</p>
+          <h1>Student Dashboard</h1>
+          <p class="topbar-description">
+            Manage your students and their academic records.
+          </p>
+        </div>
+
+        <a href="#registration" class="header-button">
+          <span>＋</span> Add New Student
+        </a>
+
+      </header>
+
+
+      <!-- SUMMARY -->
+      <section class="summary-grid">
+
+        <div class="summary-card">
+          <div class="summary-icon purple">♙</div>
+          <div>
+            <p>Total Students</p>
+            <h2>Student Directory</h2>
+            <span>Manage all registered students</span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon blue">✉</div>
+          <div>
+            <p>Registration</p>
+            <h2>Email Verification</h2>
+            <span>Verify student email addresses</span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon green">✓</div>
+          <div>
+            <p>Database</p>
+            <h2>Supabase Connected</h2>
+            <span>Student records management</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- REGISTRATION -->
+      <section class="content-grid">
+
+        <div class="panel registration-panel" id="registration">
+
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">NEW RECORD</span>
+              <h2>Register a Student</h2>
+              <p>Enter the student's information below.</p>
+            </div>
+
+            <div class="heading-icon">＋</div>
+          </div>
+
+
+          <form id="student-form">
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter student's full name"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="student@example.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Create a password"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              >
+              <small>Minimum of 8 characters.</small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="course">Course</label>
+              <input
+                id="course"
+                name="course"
+                type="text"
+                placeholder="e.g. Frontend Development"
+                required
+              >
+            </div>
+
+
+            <button id="submit-button" type="submit" class="submit-button">
+              Register Student <span>→</span>
+            </button>
+
+          </form>
+
+          <p id="message" role="status" aria-live="polite"></p>
+
+        </div>
+
+
+        <!-- INFORMATION PANEL -->
+        <div class="panel information-panel">
+
+          <div class="info-decoration">✦</div>
+
+          <span class="eyebrow">STUDENT MANAGEMENT</span>
+
+          <h2>Build a better learning experience.</h2>
+
+          <p>
+            Keep student information organized, manage course details
+            and maintain accurate student records in one place.
+          </p>
+
+          <div class="info-divider"></div>
+
+          <div class="info-feature">
+            <span>✓</span>
+            <div>
+              <strong>Secure registration</strong>
+              <small>Verify student email addresses.</small>
+            </div>
+          </div>
+
+          <div class="info-feature">
+            <span>✓</span>
+            <div>
+              <strong>Organized records</strong>
+              <small>Keep student details in one place.</small>
+            </div>
+          </div>
+
+          <div class="info-feature">
+            <span>✓</span>
+            <div>
+              <strong>Easy management</strong>
+              <small>Update or remove student records.</small>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STUDENT DIRECTORY -->
+      <section class="panel students-panel" id="students">
+
+        <div class="students-heading">
+
+          <div>
+            <span class="eyebrow">DATABASE</span>
+            <h2>Registered Students</h2>
+            <p>View and manage your student records.</p>
+          </div>
+
+          <button
+            id="refresh-button"
+            type="button"
+            class="refresh-button"
+          >
+            ↻ Refresh
+          </button>
+
+        </div>
+
+        <div id="students-list" class="students-list"></div>
+
+      </section>
+
+
+      <footer class="footer">
+        <p>© 2026 StudentHub. Student Management Dashboard.</p>
+        <span>Powered by Supabase</span>
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Management App</title>
-    <!-- css link -->
+    css link
     <link rel="stylesheet" href="/src/style.css" />
 
   </head>
@@ -18,7 +311,6 @@
           id="name"
           name="name"
           type="text"
-          placeholder="Enter student name"
           required
         />
         <label for="email">Email Address</label>
@@ -48,7 +340,7 @@
         <div id="students-list"></div>
       </section>
     </main>
-    <!-- javasript link  -->
+    javasript link 
     <script type="module" src="/src/main.js"></script>
   </body>
-</html>
+</html> -->
